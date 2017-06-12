@@ -27,7 +27,7 @@ public class Receiver {
 		Destination desiDestination = session.createQueue("queue1");
 //				第五步：我们通过Session对象创建发送和接收对象(生产者和消费者)MessageProducer/MessageConsumer
 		MessageConsumer messageConsumer = session.createConsumer(desiDestination);
-		
+		                                                                          
 		while(true){
 			TextMessage msg = (TextMessage)messageConsumer.receive();
 			msg.acknowledge();

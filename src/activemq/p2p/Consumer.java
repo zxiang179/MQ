@@ -38,8 +38,9 @@ public class Consumer {
 			this.connection.start();
 			this.session=this.connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
 			this.destination=this.session.createQueue("first");
-//			this.messageConsumer=this.session.createConsumer(this.destination,SELECTOR_3);
-			this.messageConsumer=this.session.createConsumer(this.destination,SELECTOR_2);
+//			this.messageConsumer=this.session.createConsumer(this.destination,SELECTOR_1);
+//			this.messageConsumer=this.session.createConsumer(this.destination,SELECTOR_2);
+			this.messageConsumer=this.session.createConsumer(this.destination);
 		} catch (JMSException e) {
 			e.printStackTrace();
 		}

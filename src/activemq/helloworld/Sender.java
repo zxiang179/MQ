@@ -46,16 +46,16 @@ public class Sender {
 		}*/
 		
 		TextMessage textMessage1 = session.createTextMessage();
-		textMessage1.setText("我是消息内容2");
-		messageProducer.send(desiDestination,textMessage1,DeliveryMode.NON_PERSISTENT,2,1000*60*2);
+		textMessage1.setText("我是消息内容1");
+		messageProducer.send(desiDestination,textMessage1,DeliveryMode.PERSISTENT,1,1000*60*20);
 		
 		TextMessage textMessage2 = session.createTextMessage();
 		textMessage2.setText("我是消息内容8");
-		messageProducer.send(desiDestination,textMessage2,DeliveryMode.NON_PERSISTENT,8,1000*60*2);
+		messageProducer.send(desiDestination,textMessage2,DeliveryMode.PERSISTENT,8,1000*60*20);
 		
 		TextMessage textMessage3 = session.createTextMessage();
 		textMessage3.setText("我是消息内容4");
-		messageProducer.send(desiDestination,textMessage3,DeliveryMode.NON_PERSISTENT,4,1000*60*2);
+		messageProducer.send(desiDestination,textMessage3,DeliveryMode.PERSISTENT,4,1000*60*20);
 		
 		session.commit();
 		
